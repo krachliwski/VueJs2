@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Observadores VueJs</title>
+</head>
+<body>
+    <div id="app">
+        <h1> {{ title }} </h1>
+        <hr>
+        <input type="text" v-model="type"  placeholder="Informe a marca!">
+        <p> {{ type }} </p>
+        <input type="text" v-model="model"  placeholder="Informe o modelo!">
+        <p> {{ model }} </p>
+        <input type="text" v-model="color"  placeholder="Informe a cor!">
+        <p> {{ color }} </p>
+        </div>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Eventos Observadores VueJs',
+            type: 'BMW',
+            model: 'X3 M',
+            color: 'Marine Blue'
+        },
+        watch: {
+        type (newValue, oldValue) {
+          console.log("Valor antigo" + oldValue);
+          console.log("Valor novo" + newValue);
+        },
+        model (newValue, oldValue) {
+          console.log("Valor antigo" + oldValue);
+          console.log("Valor novo" + newValue);
+        },
+        color (newValue, oldValue) {
+          console.log("Valor antigo" + oldValue);
+          console.log("Valor novo" + newValue);
+        }
+      }
+    })
+</script>
+</body>
+</html>
